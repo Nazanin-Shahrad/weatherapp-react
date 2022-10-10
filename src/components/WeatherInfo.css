@@ -1,0 +1,89 @@
+.main-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.WeatherInfo .current-local-time {
+    font-size: 15px;
+    font-weight: 200;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.WeatherInfo .current-location {
+    color: white;
+    font-size: 23px;
+    font-weight: 400;
+    margin: 20px 0 -10px;
+    text-align: center;
+}
+
+.WeatherInfo .current-weather-description {
+    color: #61d9fb;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 24px;
+}
+
+.current-weather-description:first-letter {
+    text-transform: capitalize;
+}
+
+.WeatherInfo .current-icon {
+    position: relative;
+    top: 60px;
+    left: 30px;
+}
+
+.WeatherInfo .current-temperature {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.WeatherInfo .unit {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 14px;
+    left: 5px;
+}
+
+/* .WeatherInfo .current-max-temperature {
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 28px;
+    margin-top: 18px;
+    text-align: center;
+    position: relative;
+    right: 13px;
+} */
+
+
+.WeatherInfo  .max-and-min-temperatures {
+   
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 28px;
+    margin-top: 18px;
+    text-align: center;
+    position: relative;
+    right: 13px;
+   
+}
+
+.WeatherInfo .current-weather-details ul {
+    color: white;
+    font-size: 11px;
+    font-weight: 100;
+    line-height: 19px;
+    list-style: none;
+    position: relative;
+    left: 300px;
+    bottom: 105px;
+
+}
+

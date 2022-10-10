@@ -1,0 +1,36 @@
+.WeatherApp-content {
+    padding : 10px 10px;
+}
+
+form {
+    padding: 20px 30px 25px;
+}
+
+form .form-control {
+    border: 1px solid rgb(56,56,56);
+    border-radius: 0;
+ /* box-shadow: 3px 3px 3px 2px rgb(56,56,56); */
+    font-family: 'lato' , sans-serif;
+    font-weight: 300;
+    line-height: 25px;
+    width: 120%;
+    margin-left: 5px;
+  
+}
+
+form .search-input {
+    /* box-shadow: 5px 3px 3px 1px #202a4b; */
+    font-family: 'lato' , sans-serif;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.search-city-button {
+    border-radius: 0;
+   border: 1px solid white;
+   color: white;
+   font-size: 18px;
+   padding:5px 10px;
+   position: relative;
+   left: 26px;
+}
