@@ -3,6 +3,10 @@
     margin-bottom: 20px;
 }
 
+hr {
+    color: pink;
+}
+
 
 .WeatherInfo .current-local-time {
     font-size: 15px;
@@ -20,7 +24,7 @@
 }
 
 .WeatherInfo .current-weather-description {
-    color: #61d9fb;
+    color: #d6f67e;
     font-weight: 300;
     font-size: 15px;
     margin-top: 24px;

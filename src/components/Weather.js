@@ -2,6 +2,7 @@ import React , { useState }from 'react';
 import axios from 'axios';
 import './Weather.css';
 import WeatherInfo from './WeatherInfo';
+import WeatherForcast from './WeatherForcast';
 
 const Weather = () => {
     const [city , setCity] = useState('');
@@ -81,6 +82,8 @@ const Weather = () => {
         WeatherForcastPreview */}
 
         <WeatherInfo data={weatherData} />
+      <hr/>
+        <WeatherForcast coordinates={weatherData.coordinates}/>
 
 
 

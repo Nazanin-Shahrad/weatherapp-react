@@ -8,11 +8,12 @@ const WeatherInfo = (props) => {
   return (
     <div className='WeatherInfo'>
         <div className='current-local-time' >
-            <FormatedTime  time={props.data.date} />
+            <FormatedTime  time={props.data.date}  timezone = {props.data.timezone}/>
 
         </div>
         <div className='current-location'>
             {props.data.city} , {props.data.country}
+            <hr />
         </div>
 
         <div className='row main-container'>
@@ -23,12 +24,12 @@ const WeatherInfo = (props) => {
                 alt={props.data.description}
                
                 />
-            
-
+      
             </div>
-            <div className='col-6 text-center'>
+            
+            <div className='col-6 text-center '>
                 <h5 className='current-weather-description'>
-                    {props.data.description} ,   
+                    {props.data.description}    
                 </h5>
                 <h6 className="current-temperature">
                     {""}

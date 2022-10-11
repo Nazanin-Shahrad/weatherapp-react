@@ -2,6 +2,8 @@ import React from 'react'
 
 const FormatedTime = (props) => {
     let localTime = new Date(props.time);
+    let localTimeOffset = localTime.getTimezoneOffset() * 60;
+    localTime.setSeconds(localTime.getSeconds() + localTimeOffset + props.timezone);
 
     let days= ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
     let localDay =days[localTime.getDay()];
