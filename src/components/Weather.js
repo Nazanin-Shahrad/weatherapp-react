@@ -3,9 +3,10 @@ import axios from 'axios';
 import './Weather.css';
 import WeatherInfo from './WeatherInfo';
 import WeatherForcast from './WeatherForcast';
+import Loader from 'react-loader-spinner';
 
-const Weather = () => {
-    const [city , setCity] = useState('');
+const Weather = (props) => {
+    const [city , setCity] = useState(props.defaultCity);
     let [weatherData, setWeatherData] = useState({ ready: false });
 
 
@@ -52,6 +53,11 @@ const Weather = () => {
 
     }
 
+    function updateCity(event){
+        setCity(event.target.value)
+    }
+if (weatherData.ready){
+
   return (
     <div className='WeatherApp-content'>
         <form onSubmit={handleSubmit}>
@@ -63,7 +69,7 @@ const Weather = () => {
                     placeholder='search city'
                     autoComplete='off'
                     value={city}
-                    onChange={(e) => setCity(e.target.value)}
+                    onChange={updateCity}
                     />
                 </div>
                 <div className='col-3 p-0'>
@@ -84,12 +90,20 @@ const Weather = () => {
         <WeatherInfo data={weatherData} />
       <hr/>
         <WeatherForcast coordinates={weatherData.coordinates}/>
-
-
-
-
     </div>
-  )
+  );
+} else {
+    fetchData();
+    return(
+        <Loader 
+        type='threeDots'
+        color='#d6f67e'
+        height={80}
+        width={80}
+        timeout={3000}/>
+
+    )
+}
 }
 
 export default Weather

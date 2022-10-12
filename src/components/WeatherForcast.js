@@ -11,27 +11,41 @@ const WeatherForcast = (props) => {
         setLoaded(false);
     },[props.coordinates]);
 
-    // const handleResponse = (response) => {
-    //     setForecast(response.data.daily);
-    //     setLoaded(true);
-    //     console.log(forecast);
+//    const groupDays = data => {
+//         return(data.reduce((list,item) => {
+//             const forecastDate = item.dt_txt.substr(0,10);
+//             list[forecastDate]= list[forecastDate] || [];
+//             list[forecastDate].push(item);
+//             return list;
+            
+//         },{}));
+//     };
 
+
+
+    const handleResponse = (response) => {
+       
+        setForecast(response.data.daily)
+        setLoaded(true);
+        console.log(forecast);
+
+    }
+
+    // const fetchForecastData = async () =>{
+
+    //     let apiKey="9da05d8e7133244bf51717640eda95b4";
+    //     let lat = props.coordinates.lat;
+    //     let lon = props.coordinates.lon;
+    //     let units= "metric";
+    //     // let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+    //     // let apiUrl=`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}` ;
+    //     // let apiUrl=`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+    //    let apiUrl= `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+
+    //     const response=  await axios.get(apiUrl);
+    //    console.log("hello",response.data);
     // }
 
-    const fetchForecastData = async () =>{
-
-        let apiKey="9da05d8e7133244bf51717640eda95b4";
-        let lat = props.coordinates.lat;
-        let lon = props.coordinates.lon;
-        let units= "metric";
-        // let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-        // let apiUrl=`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}` ;
-        // let apiUrl=`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-       let apiUrl= `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-
-        const response=  await axios.get(apiUrl);
-       console.log(response.data);
-    }
 
 
 
@@ -41,7 +55,7 @@ const WeatherForcast = (props) => {
                 <div className='WeatherForecast-header'>
                     Next 5 Days
                 </div>
-                <hr />
+                {/* <hr /> */}
                 <div className='row'>
                     {forecast.map((dailyForecast , index)=> {
                         if(index < 6 && index > 0){
@@ -59,23 +73,34 @@ const WeatherForcast = (props) => {
             </div>
         );
     } else {
+        // console.log("else");
 
+        let apiKey="9da05d8e7133244bf51717640eda95b4";
+      
+        let lon = props.coordinates.lon;
+        let latitude = props.coordinates.lat;
+        let units= "metric";
+        
+        // let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=44.34&lon=10.99&appid=9da05d8e7133244bf51717640eda95b4&units=metric`;
+        let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon}&appid=${apiKey}&units=${units}`;
+        // let apiUrl= `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${lon}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse)
         // console.log(props.coordinates);
         // console.log(props.coordinates.lat);
         // console.log(props.coordinates.lon);
         
 
-        fetchForecastData();
+        // fetchForecastData();
 
         
         return (
-          <div>Hello</div>
-            // <Loader 
-            // type='threeDots'
-            // color='#d6f67e'
-            // height={80}
-            // width={80}
-            // timeout={3000}/>
+         
+            <Loader 
+            type='threeDots'
+            color='#d6f67e'
+            height={80}
+            width={80}
+            timeout={3000}/>
         )
 
 

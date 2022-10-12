@@ -1,6 +1,7 @@
 hr {
     color : pink;
-    margin: -32px 10px 40px 17px;
+    /* margin: -32px 10px 40px 17px; */
+    margin: 5pxpx 10px 40px 17px;
     max-width: 450px;
 }
 

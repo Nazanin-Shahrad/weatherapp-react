@@ -10,7 +10,7 @@ const WeatherIcon = (props) => {
         "02n": "PARTLY_CLOUDY_NIGHT",
         "03d": "PARTLY_CLOUDY_DAY",
         "03n": "PARTLY_CLOUDY_NIGHT",
-        "04d": "OVERCAST CLOUDS",
+        "04d": "CLOUDY",
         "04n": "CLOUDY",
         "09d": "RAIN",
         "09n": "RAIN",
