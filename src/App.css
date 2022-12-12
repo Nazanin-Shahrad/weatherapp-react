@@ -26,7 +26,8 @@ footer {
 .WeatherApp-container {
   /* background-image:linear-gradient(to right , #365186 , #103783); */
   color: white;
-  /* padding: 5px; */
+  /* padding: 15px; */
+
   text-align: center;
   max-width: 525;
   max-height: 620px;

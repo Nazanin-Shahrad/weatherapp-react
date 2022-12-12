@@ -1,5 +1,5 @@
 .WeatherApp-content {
-    padding : 10px 10px;
+    padding : 10px 20px;
     /* background-image: linear-gradient(to bottom , #2b5876 , #4e4376) */
     
     /* background-image: linear-gradient(to bottom , #c33764 , #1d2671) */
@@ -28,6 +28,13 @@ form .search-input {
     font-family: 'lato' , sans-serif;
     font-size: 14px;
     padding-left: 15px;
+    box-shadow: none;
+}
+
+.search-input:focus {
+    outline: none !important;
+    box-shadow: none;
+
 }
 
 .search-city-button {
