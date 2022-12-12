@@ -10,7 +10,7 @@ function App() {
 
       </div>
       <footer>
-        <p> CopyRight</p>
+        <p> Built by Nazanin Shahrad ,2022 </p>
       </footer>
      
     </div>
